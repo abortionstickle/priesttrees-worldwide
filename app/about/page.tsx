@@ -65,6 +65,13 @@ export default function AboutPage() {
               in its trunk. It lives for two thousand years. In Zone 10b and warmer, it
               thrives outdoors in Texas. We don&apos;t apologize for selling it.
             </p>
+            <p>
+              Consider the crepe myrtle. It&apos;s from India and China. Texas grows it
+              everywhere. Every strip mall, every driveway, every subdivision. Nobody calls it
+              invasive. Nobody lectures you about planting it. It thrives here, it&apos;s
+              beautiful, and it&apos;s about as non-native as a tree gets. That&apos;s the
+              entire argument.
+            </p>
             <p className="text-text">
               The one exception: we don&apos;t sell plants that are documented invasive
               species in Texas or the surrounding region. Invasiveness is an ecological
