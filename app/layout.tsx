@@ -24,6 +24,10 @@ export const metadata: Metadata = {
   description:
     "Rare and unusual trees for discerning homeowners. Monkey puzzle, baobab, desert willow, and more — matched to your climate zone. Based in Texas.",
   keywords: ["rare trees", "unusual trees", "non-native trees", "Texas nursery", "monkey puzzle tree", "baobab", "USDA hardiness zones"],
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
