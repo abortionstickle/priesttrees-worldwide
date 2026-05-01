@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import PlantCard from "@/components/PlantCard";
+import PlantCatalog from "@/components/PlantCatalog";
 import ZipSearch from "@/components/ZipSearch";
 import { plants, getPlantsByZone } from "@/data/plants";
 import { parseZoneNumber } from "@/data/zones";
@@ -39,7 +39,7 @@ export default async function PlantsPage({ searchParams }: Props) {
         <p className="text-muted text-lg max-w-xl">
           {zoneNum !== null
             ? `Showing trees compatible with Zone ${zoneStr?.toUpperCase()}. ${displayPlants.length} match${displayPlants.length === 1 ? "" : "es"}.`
-            : `${plants.length} trees. Non-native, forgotten classics, and things your nursery refuses to stock.`}
+            : `${plants.length} trees. Unusual, forgotten classics, and things your nursery refuses to stock.`}
         </p>
       </div>
 
@@ -65,26 +65,8 @@ export default async function PlantsPage({ searchParams }: Props) {
         )}
       </div>
 
-      {/* Grid */}
-      {displayPlants.length === 0 ? (
-        <div className="text-center py-20">
-          <p className="text-muted text-lg mb-2">No trees match Zone {zoneStr?.toUpperCase()}.</p>
-          <p className="text-subtle text-sm">Try a different zone or browse the full catalog.</p>
-          <a
-            href="/plants"
-            className="inline-block mt-6 px-6 py-3 border border-acid text-acid text-xs tracking-widest hover:bg-acid hover:text-background transition-colors"
-            style={{ fontFamily: "var(--font-display, Oswald)", textTransform: "uppercase" }}
-          >
-            Full Catalog
-          </a>
-        </div>
-      ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-          {displayPlants.map((plant) => (
-            <PlantCard key={plant.slug} plant={plant} />
-          ))}
-        </div>
-      )}
+      {/* Catalog with continent + category filters */}
+      <PlantCatalog plants={displayPlants} />
     </div>
   );
 }

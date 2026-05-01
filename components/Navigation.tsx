@@ -23,7 +23,7 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <GorillaSVG className="h-9 w-9 text-acid transition-transform group-hover:scale-110" />
+            <GorillaSVG className="h-6 w-12 transition-transform group-hover:scale-110" />
             <span
               className="text-text font-display text-lg tracking-widest leading-tight hidden sm:block"
               style={{ fontFamily: "var(--font-display, Oswald, sans-serif)" }}
