@@ -1,11 +1,7 @@
 <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
   <rect width="32" height="32" fill="#0d100a"/>
-  <!-- Araucaria / monkey puzzle silhouette -->
-  <!-- trunk -->
-  <rect x="15" y="22" width="2" height="8" fill="#b8d42a"/>
-  <!-- tiers bottom to top, widest first -->
-  <polygon points="8,22 24,22 20,17 12,17" fill="#b8d42a"/>
-  <polygon points="10,17 22,17 19,13 13,13" fill="#b8d42a"/>
-  <polygon points="11,13 21,13 18.5,9 13.5,9" fill="#b8d42a"/>
-  <polygon points="12.5,9 19.5,9 17,5 15,5" fill="#b8d42a"/>
+  <!-- Rounded canopy -->
+  <circle cx="16" cy="13" r="9" fill="#b8d42a"/>
+  <!-- Trunk -->
+  <rect x="14" y="21" width="4" height="7" rx="1" fill="#b8d42a"/>
 </svg>
