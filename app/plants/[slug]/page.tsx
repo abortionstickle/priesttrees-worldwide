@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getPlantBySlug, plants } from "@/data/plants";
+import PlantDetailImage from "@/components/PlantDetailImage";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -41,13 +42,8 @@ export default async function PlantDetailPage({ params }: Props) {
       </nav>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-        {/* Image placeholder */}
-        <div className="aspect-[4/3] bg-surface-2 border border-border flex items-center justify-center">
-          <div className="text-center p-8">
-            <p className="text-muted text-sm italic mb-2">{plant.scientificName}</p>
-            <p className="text-subtle text-xs">Photography coming soon</p>
-          </div>
-        </div>
+        {/* Image */}
+        <PlantDetailImage plant={plant} />
 
         {/* Details */}
         <div>
@@ -129,7 +125,6 @@ export default async function PlantDetailPage({ params }: Props) {
             </div>
           )}
 
-          {/* CTA */}
           <Link
             href="/contact"
             className="inline-block w-full sm:w-auto text-center px-8 py-4 bg-acid text-background text-sm tracking-widest font-semibold hover:bg-acid-dim transition-colors"
@@ -139,6 +134,51 @@ export default async function PlantDetailPage({ params }: Props) {
           </Link>
         </div>
       </div>
+
+      {/* Varieties */}
+      {plant.varieties && plant.varieties.length > 0 && (
+        <div className="border-t border-border pt-12 mb-12">
+          <h2
+            className="text-text text-3xl sm:text-4xl mb-2"
+            style={{ fontFamily: "var(--font-display, Oswald)", textTransform: "uppercase" }}
+          >
+            Varieties
+          </h2>
+          <p className="text-muted mb-8">
+            Available through{" "}
+            {plant.partnerUrl ? (
+              <a href={plant.partnerUrl} target="_blank" rel="noopener noreferrer" className="text-acid hover:underline">
+                {plant.partnerName}
+              </a>
+            ) : "our partners"}.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            {plant.varieties.map((v) => (
+              <a
+                key={v.name}
+                href={v.url ?? plant.partnerUrl ?? "#"}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block bg-surface border border-border p-5 hover:border-acid transition-colors"
+              >
+                <h3
+                  className="text-acid text-lg mb-1 group-hover:text-text transition-colors"
+                  style={{ fontFamily: "var(--font-display, Oswald)", textTransform: "uppercase" }}
+                >
+                  {v.name}
+                </h3>
+                <p className="text-muted text-xs italic mb-3">{v.tagline}</p>
+                {v.heat && (
+                  <p className="text-text text-xs tracking-widest mb-2" style={{ fontFamily: "var(--font-display, Oswald)" }}>
+                    {v.heat}
+                  </p>
+                )}
+                <p className="text-muted text-sm leading-relaxed">{v.flavor}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* Köppen detail */}
       <div className="border-t border-border pt-12">

@@ -1,3 +1,11 @@
+export interface PlantVariety {
+  name: string;
+  tagline: string;
+  heat?: string;
+  flavor: string;
+  url?: string;
+}
+
 export interface Plant {
   slug: string;
   name: string;
@@ -18,6 +26,7 @@ export interface Plant {
   nativeRegion: string;
   invasiveNote?: string;
   imageUrl?: string;
+  varieties?: PlantVariety[];
 }
 
 const wiki = (file: string) =>
@@ -519,72 +528,187 @@ export const plants: Plant[] = [
     imageUrl: wiki("Magnolia_Elizabeth.jpg"),
   },
 
-  // ── FRUIT ─────────────────────────────────────────────────────────────────
+  // ── FRUIT — CHERRIES ──────────────────────────────────────────────────────
 
   {
-    slug: "low-chill-cherry",
-    name: "Low Chill Cherry",
-    scientificName: "Prunus avium — Minnie Royal / Royal Lee / Lapins",
-    tagline: "Texas was told cherries were impossible here. Ignore that.",
-    description: "Conventional wisdom said Texas summers were a fruit-growing dead zone. Specific cultivars broke that rule. Minnie Royal and Royal Lee are the go-to cross-pollinating pair for Texas — 200–300 chill hours, genuine sweet cherries in late April. Lapins is the self-fertile pick for Zone 8 if you only want one tree. This is not a compromise variety. These produce real cherries that taste like cherries. Stop buying California fruit shipped three days old.",
+    slug: "minnie-royal-cherry",
+    name: "Minnie Royal Cherry",
+    scientificName: "Prunus avium 'Minnie Royal'",
+    tagline: "Half the chill hours. All the cherry. Plant with Royal Lee.",
+    description: "Minnie Royal broke the rule that sweet cherries couldn't grow in warm climates. At 200–300 chill hours it produces genuine, full-flavored sweet cherries in late April. It's not self-fertile — plant a Royal Lee within 50 feet and both trees produce. The cross-pollination pair is one of the most reliable low-chill cherry combos available. Bloom is spectacular in late winter. If you've been told cherries are impossible, this is the tree that proves otherwise.",
     zoneMin: 8, zoneMax: 10,
-    koppen: ["Cfa", "BSh"], koppenLabel: "Humid subtropical to hot semi-arid",
+    koppen: ["Cfa", "BSh"], koppenLabel: "Humid subtropical to semi-arid",
     category: "fruit", continent: "europe", featured: false,
-    nativeRegion: "Cultivar — bred for warm climates",
-    chillHours: "200–300 hours (Minnie Royal / Royal Lee); ~400 hours (Lapins)", mature: "15–25 feet",
-    imageUrl: wiki("Prunus_avium_subsp_avium_flowers.jpg"),
+    nativeRegion: "Cultivar — developed for warm climates", chillHours: "200–300 hours",
+    mature: "15–20 feet", imageUrl: wiki("Prunus_avium_subsp_avium_flowers.jpg"),
   },
   {
-    slug: "low-chill-peach",
-    name: "Low Chill Peach",
-    scientificName: "Prunus persica (low chill varieties)",
-    tagline: "Real peaches. Your backyard. No cold winter required.",
-    description: "The Southern Texas peach orchard was never supposed to exist. Varieties including Florida Prince (150 chill hours), Desert Gold (250 hours), Tropic Snow (175 hours), and Harvester (500 hours for Zone 8 edge) proved the skeptics wrong. These are not ornamentals. They produce. Zone 8–10. If you have the space and the sun, stop waiting for the farmers market and grow a tree that ships 0 miles.",
+    slug: "royal-lee-cherry",
+    name: "Royal Lee Cherry",
+    scientificName: "Prunus avium 'Royal Lee'",
+    tagline: "Pairs with Minnie Royal. Together they produce in Zone 8.",
+    description: "Royal Lee is the pollinator counterpart to Minnie Royal — plant them together and both produce heavily. Dark-red, large-fruited sweet cherry. 200–300 chill hours. Ripens a week or two after Minnie Royal, extending the harvest window. Slightly firmer flesh, rich flavor, holds on the tree better than most. The best strategy for warm-climate cherry production is the Minnie Royal / Royal Lee pair. Neither works as well without the other.",
     zoneMin: 8, zoneMax: 10,
-    koppen: ["Cfa", "BSh", "BSk"], koppenLabel: "Humid subtropical to semi-arid",
-    category: "fruit", continent: "asia", featured: false,
-    nativeRegion: "Cultivar — bred for warm climates",
-    chillHours: "150–500 hours depending on variety", mature: "12–20 feet",
-    imageUrl: wiki("Prunus_persica_flower.jpg"),
+    koppen: ["Cfa", "BSh"], koppenLabel: "Humid subtropical to semi-arid",
+    category: "fruit", continent: "europe", featured: false,
+    nativeRegion: "Cultivar — developed for warm climates", chillHours: "200–300 hours",
+    mature: "15–20 feet", imageUrl: wiki("Prunus_avium_fruits.jpg"),
   },
   {
-    slug: "low-chill-plum",
-    name: "Low Chill Plum",
-    scientificName: "Prunus salicina (Japanese varieties)",
-    tagline: "Japanese plums don't care about your winters.",
-    description: "Japanese plum varieties were developed for exactly this kind of climate. Beauty (250 hrs), Methley (250 hrs), Gulf Ruby (150 hrs), and Gulf Gold (150 hrs) all thrive in Zone 8 and below. Heavy producers. Disease-resistant. The Gulf series by Florida breeding programs is especially reliable in the deep South and Texas. Self-fertile options available. Stop buying grocery-store plums picked green and gassed to color.",
+    slug: "lapins-cherry",
+    name: "Lapins Cherry",
+    scientificName: "Prunus avium 'Lapins'",
+    tagline: "Self-fertile. 400 hours. One tree is enough.",
+    description: "Lapins is the self-fertile option — one tree, no pollenizer needed. Needs around 400 chill hours, which puts it at the upper end for Zone 8 but within reach in cooler winters. Large, firm, dark-red cherries with excellent flavor. A cross between Van and Stella, bred in Canada for cold hardiness but adapted across a wide range. If you only have room for one cherry tree and your winters are cold enough, Lapins is the reliable single-tree solution.",
+    zoneMin: 7, zoneMax: 9,
+    koppen: ["Cfa", "Cfb", "BSk"], koppenLabel: "Temperate to humid subtropical",
+    category: "fruit", continent: "europe", featured: false,
+    nativeRegion: "Cultivar — Summerland, BC, Canada", chillHours: "~400 hours",
+    mature: "15–25 feet", imageUrl: wiki("Prunus_avium_fruits.jpg"),
+  },
+
+  // ── FRUIT — PEACHES ───────────────────────────────────────────────────────
+
+  {
+    slug: "flordaprince-peach",
+    name: "FlordaPrince Peach",
+    scientificName: "Prunus persica 'FlordaPrince'",
+    tagline: "150 chill hours. One of the most reliable warm-climate peaches.",
+    description: "Developed by the University of Florida specifically for low-chill climates, FlordaPrince needs only 150 chill hours and ripens early — late April to May. Medium-large fruit with yellow flesh, slight red blush, good sweetness. Self-fertile. One of the most widely planted low-chill peaches for a reason: it consistently delivers in Zone 8–9 when other peaches fail. Fast-growing. Start getting fruit in year two.",
     zoneMin: 8, zoneMax: 10,
-    koppen: ["Cfa", "BSh"], koppenLabel: "Humid subtropical to hot semi-arid",
+    koppen: ["Cfa", "BSh"], koppenLabel: "Humid subtropical to semi-arid",
     category: "fruit", continent: "asia", featured: false,
-    nativeRegion: "Cultivar — Japanese breeding lines",
-    chillHours: "150–400 hours depending on variety", mature: "10–18 feet",
-    imageUrl: wiki("Prunus_salicina_-_Santa_Rosa_plum.jpg"),
+    nativeRegion: "Cultivar — University of Florida breeding program", chillHours: "~150 hours",
+    mature: "12–18 feet", imageUrl: wiki("Prunus_persica_peach_flower.jpg"),
   },
   {
-    slug: "low-chill-almond",
-    name: "Low Chill Almond",
-    scientificName: "Prunus dulcis (low chill varieties)",
-    tagline: "Almonds in Zone 8. The chill-hour barrier has been broken.",
-    description: "Standard almonds need 500–700 chill hours — a hard limit for the South. All-In-One (self-fertile, 300–400 hours) and Ne Plus Ultra (250–300 hours) were bred specifically to work in mild-winter climates. All-In-One produces large, sweet almonds on a single tree with no pollinator needed. Zone 7–10. The window for almond production in Texas is narrow but real, and a productive almond tree in a Texas backyard is worth every strange look you'll get.",
+    slug: "tropicbeauty-peach",
+    name: "TropicBeauty Peach",
+    scientificName: "Prunus persica 'TropicBeauty'",
+    tagline: "150 hours. Good size. Good flavor. Does what it says.",
+    description: "TropicBeauty is another University of Florida release — 150 chill hours, medium-large freestone fruit with firm yellow flesh and solid flavor. Ripens mid-season, a couple of weeks after FlordaPrince. Good disease resistance. Self-fertile. One of the better all-around performers for warm-climate peach production. Not flashy, just reliable. If FlordaPrince is your early tree, TropicBeauty extends the harvest window through the middle of the season.",
+    zoneMin: 8, zoneMax: 10,
+    koppen: ["Cfa", "BSh"], koppenLabel: "Humid subtropical to semi-arid",
+    category: "fruit", continent: "asia", featured: false,
+    nativeRegion: "Cultivar — University of Florida breeding program", chillHours: "~150 hours",
+    mature: "12–18 feet", imageUrl: wiki("Prunus_persica.jpg"),
+  },
+  {
+    slug: "tropicsweet-peach",
+    name: "TropicSweet Peach",
+    scientificName: "Prunus persica 'TropicSweet'",
+    tagline: "100 chill hours. The lowest-chill peach worth growing.",
+    description: "TropicSweet pushes the low-chill ceiling further than almost anything else: 100 hours. That opens up Zone 9 and the warmest parts of Zone 8 for actual peach production. Yellow-fleshed, freestone, excellent sweetness — not a compromise cultivar. Developed by UF/IFAS. Ripens very early in the season. Self-fertile. If you're in a truly mild-winter zone and thought peaches were out of reach, TropicSweet is your answer.",
+    zoneMin: 9, zoneMax: 11,
+    koppen: ["BSh", "Cfa"], koppenLabel: "Hot semi-arid to subtropical",
+    category: "fruit", continent: "asia", featured: false,
+    nativeRegion: "Cultivar — University of Florida/IFAS", chillHours: "~100 hours",
+    mature: "10–15 feet", imageUrl: wiki("Prunus_persica_peach.jpg"),
+  },
+  {
+    slug: "earligrande-peach",
+    name: "Earligrande Peach",
+    scientificName: "Prunus persica 'Earligrande'",
+    tagline: "200 hours. Big fruit. Ripens early. Widely available.",
+    description: "Earligrande delivers one of the earliest ripening windows of the standard low-chill peaches — late April in Zone 8 — with good fruit size and yellow flesh. Around 200 chill hours. Self-fertile, reliable, and easier to find at nurseries than some of the University of Florida releases. A solid workhorse variety. Not the most interesting peach you'll ever eat, but it produces consistently and gets peaches on your table in spring when nobody else has them.",
+    zoneMin: 8, zoneMax: 10,
+    koppen: ["Cfa", "BSh", "BSk"], koppenLabel: "Subtropical to semi-arid",
+    category: "fruit", continent: "asia", featured: false,
+    nativeRegion: "Cultivar — bred in California", chillHours: "~200 hours",
+    mature: "12–18 feet", imageUrl: wiki("Prunus_persica_flower.jpg"),
+  },
+
+  // ── FRUIT — PLUMS ─────────────────────────────────────────────────────────
+
+  {
+    slug: "gulf-gold-plum",
+    name: "Gulf Gold Plum",
+    scientificName: "Prunus salicina 'Gulf Gold'",
+    tagline: "100 chill hours. Yellow-gold Japanese plum. Zone 8–10.",
+    description: "Gulf Gold is part of the Gulf Series developed at Mississippi State specifically for the Deep South — 100 chill hours, yellow-gold skin with yellow flesh, mild and sweet. Ripens mid-summer. One of the lowest-chill plums available. Not self-fertile — plant with Gulf Ruby or another Japanese plum for cross-pollination. The Gulf Series as a whole has been the most reliable family of low-chill plums for warm southern climates. Gulf Gold is the sweet, mild, easy-eating entry point.",
+    zoneMin: 8, zoneMax: 10,
+    koppen: ["Cfa", "BSh"], koppenLabel: "Humid subtropical to semi-arid",
+    category: "fruit", continent: "asia", featured: false,
+    nativeRegion: "Cultivar — Mississippi State University breeding program", chillHours: "~100 hours",
+    mature: "10–15 feet", imageUrl: wiki("Prunus_salicina_2.jpg"),
+  },
+  {
+    slug: "gulf-ruby-plum",
+    name: "Gulf Ruby Plum",
+    scientificName: "Prunus salicina 'Gulf Ruby'",
+    tagline: "150 hours. Dark red skin, red flesh. The Gulf Series workhorse.",
+    description: "Gulf Ruby is the most popular of the Gulf Series for a reason — 150 chill hours, dark red skin, red flesh, good size, excellent flavor with a balance of sweet and acid. Cross-pollinates with Gulf Gold, effectively doubling your harvest when planted together. Ripens slightly earlier than Gulf Gold. Heavy producer once established. The kind of plum that makes people stop complaining about grocery store fruit. Zone 8–10.",
+    zoneMin: 8, zoneMax: 10,
+    koppen: ["Cfa", "BSh"], koppenLabel: "Humid subtropical to semi-arid",
+    category: "fruit", continent: "asia", featured: false,
+    nativeRegion: "Cultivar — Mississippi State University breeding program", chillHours: "~150 hours",
+    mature: "10–15 feet", imageUrl: wiki("Prunus_salicina_-_Santa_Rosa_plum.jpg"),
+  },
+  {
+    slug: "methley-plum",
+    name: "Methley Plum",
+    scientificName: "Prunus salicina 'Methley'",
+    tagline: "Self-fertile. 250 hours. Reliable from Zone 5 to 9.",
+    description: "Methley is the self-fertile plum that works across an enormous range — Zone 5 through 9 — and only needs about 250 chill hours. Red-purple skin, reddish juice, sweet and mild. Ripens early in the season. One of the most widely adaptable Japanese plums available. If you want one plum tree that works without a pollenizer and handles both cold winters and warm ones, Methley is the answer. Not glamorous, but it never fails.",
+    zoneMin: 5, zoneMax: 9,
+    koppen: ["Cfa", "Cfb", "BSk", "BSh"], koppenLabel: "Temperate to subtropical",
+    category: "fruit", continent: "asia", featured: false,
+    nativeRegion: "Cultivar — South African origin, widely bred", chillHours: "~250 hours",
+    mature: "10–18 feet", imageUrl: wiki("Prunus_salicina_2.jpg"),
+  },
+
+  // ── FRUIT — ALMONDS ───────────────────────────────────────────────────────
+
+  {
+    slug: "all-in-one-almond",
+    name: "All-In-One Almond",
+    scientificName: "Prunus dulcis 'All-In-One'",
+    tagline: "Self-fertile. 300–400 chill hours. The only almond you need for Zone 7–9.",
+    description: "Standard almonds need 500–700 chill hours. All-In-One was bred specifically to break that barrier — around 300–400 hours, self-fertile, produces large sweet almonds without a pollenizer. The name is earned. Semi-dwarf habit makes it manageable in a smaller yard. Showy white-pink bloom in late winter. Zone 7–10. A productive almond tree in a warm-climate yard is one of the more unusual things you can grow, and All-In-One is the variety that actually delivers it.",
     zoneMin: 7, zoneMax: 10,
     koppen: ["Csa", "BSh", "BSk", "Cfa"], koppenLabel: "Mediterranean to subtropical",
     category: "fruit", continent: "asia", featured: false,
-    nativeRegion: "Cultivar — Central Asia / Middle East origin",
-    chillHours: "250–400 hours (variety-dependent)", mature: "15–30 feet",
-    imageUrl: wiki("Almonds_dsc07932.jpg"),
+    nativeRegion: "Cultivar — California breeding program", chillHours: "300–400 hours",
+    mature: "15–20 feet", imageUrl: wiki("Almonds_dsc07932.jpg"),
   },
   {
-    slug: "pluerry",
-    name: "Pluerry",
-    scientificName: "Prunus salicina × Prunus avium hybrid",
-    tagline: "Part plum, part cherry. 100% Zaiger Genetics. Better than either parent.",
-    description: "Zaiger Genetics spent decades crossing plums and cherries to produce something neither parent could be — ultra-sweet, dark-fleshed, low-chill stone fruit that produces reliably in warm climates. Sweet Treat (200 hrs, self-fertile) is the workhorse. Flavor Fall and Candy Heart need a pollenizer (any Japanese plum works). The flavor is dense and complex, closer to a dark cherry than a plum. Zone 7–10. A legitimate breakthrough in warm-climate fruit production.",
+    slug: "ne-plus-ultra-almond",
+    name: "Ne Plus Ultra Almond",
+    scientificName: "Prunus dulcis 'Ne Plus Ultra'",
+    tagline: "250–300 hours. Soft-shell. Large nut. One of the oldest low-chill almonds.",
+    description: "Ne Plus Ultra is one of the oldest California almond varieties still in commercial production — soft-shell, large papery-thin shell that cracks by hand, flavorful sweet kernel. 250–300 chill hours, which is some of the lowest in the almond world. Needs a pollenizer — All-In-One or another almond nearby works. Heavy producer when pollinated. The combination of Ne Plus Ultra + All-In-One is a legitimate warm-climate almond orchard in two trees.",
+    zoneMin: 7, zoneMax: 10,
+    koppen: ["Csa", "BSh", "BSk"], koppenLabel: "Mediterranean to semi-arid",
+    category: "fruit", continent: "asia", featured: false,
+    nativeRegion: "Cultivar — California, origin 1800s", chillHours: "250–300 hours",
+    mature: "15–25 feet", imageUrl: wiki("Prunus_dulcis_flowers.jpg"),
+  },
+
+  // ── FRUIT — PLUERRIES ─────────────────────────────────────────────────────
+
+  {
+    slug: "sweet-treat-pluerry",
+    name: "Sweet Treat Pluerry",
+    scientificName: "Prunus salicina × avium 'Sweet Treat'",
+    tagline: "Self-fertile. 200 hours. The plum-cherry hybrid that actually works.",
+    description: "Zaiger Genetics spent decades crossing plums and cherries to produce something neither parent could be alone. Sweet Treat is the workhorse of the pluerry line — self-fertile, about 200 chill hours, and produces dark reddish-purple fruit with an intensely sweet, dense flavor closer to a dark cherry than a plum. Ripens late spring to early summer. Zone 7–10. No pollenizer needed. If you want one unusual stone fruit tree that makes people ask questions, this is it.",
     zoneMin: 7, zoneMax: 10,
     koppen: ["Cfa", "BSh", "Csa"], koppenLabel: "Subtropical to Mediterranean",
     category: "fruit", continent: "americas", featured: false,
-    nativeRegion: "Hybrid cultivar — developed in California by Zaiger Genetics",
-    chillHours: "200–400 hours depending on variety", mature: "10–20 feet",
-    imageUrl: wiki("Pluot.jpg"),
+    nativeRegion: "Hybrid — Zaiger Genetics, Modesto CA", chillHours: "~200 hours",
+    mature: "10–18 feet", imageUrl: wiki("Pluot.jpg"),
+  },
+  {
+    slug: "candy-heart-pluerry",
+    name: "Candy Heart Pluerry",
+    scientificName: "Prunus salicina × avium 'Candy Heart'",
+    tagline: "The sweetest of the pluerries. Needs a pollenizer. Worth it.",
+    description: "Candy Heart is the sweeter, richer pluerry — deep burgundy skin, translucent red flesh, flavor more cherry than plum with extraordinary sugar content. Needs a pollenizer (any Japanese plum works — Gulf Ruby, Methley). Around 400 chill hours. Later-ripening than Sweet Treat, extending the stone fruit season deeper into summer. Zone 7–9. The people who grow this don't go back to regular plums.",
+    zoneMin: 7, zoneMax: 9,
+    koppen: ["Cfa", "Cfb", "BSk"], koppenLabel: "Temperate to subtropical",
+    category: "fruit", continent: "americas", featured: false,
+    nativeRegion: "Hybrid — Zaiger Genetics, Modesto CA", chillHours: "~400 hours",
+    mature: "10–18 feet", imageUrl: wiki("Pluot.jpg"),
   },
   {
     slug: "desert-cherry",
@@ -637,7 +761,65 @@ export const plants: Plant[] = [
     category: "pepper", continent: "americas", featured: false,
     nativeRegion: "South America", mature: "4–8 feet (perennial in Zone 8+)",
     partnerUrl: "https://austinpeppers.com", partnerName: "Austin Peppers",
-    imageUrl: wiki("Capsicum_baccatum.jpg"),
+    imageUrl: wiki("Capsicum_baccatum_var._pendulum.jpg"),
+    varieties: [
+      {
+        name: "Sugar Rush Peach",
+        tagline: "The crowd-pleaser. Almost no heat. Peachy-sweet.",
+        heat: "100–1,000 SHU",
+        flavor: "Sweet, fruity, peachy. Almost no burn. Eats like candy off the plant.",
+        url: "https://austinpeppers.com",
+      },
+      {
+        name: "Sugar Rush Cream",
+        tagline: "Zero heat. Ivory skin. Butter-sweet.",
+        heat: "0–500 SHU",
+        flavor: "Sweet, creamy, mild. The white version of Sugar Rush Peach. No heat at all.",
+        url: "https://austinpeppers.com",
+      },
+      {
+        name: "Sugar Rush Red",
+        tagline: "The hot version. Same sweetness, actual fire.",
+        heat: "5,000–15,000 SHU",
+        flavor: "Sweet up front, then heat builds. Fruity baccatum base with real burn.",
+        url: "https://austinpeppers.com",
+      },
+      {
+        name: "Aji Amarillo",
+        tagline: "The backbone of Peruvian cuisine. Fruity, hot, irreplaceable.",
+        heat: "30,000–50,000 SHU",
+        flavor: "Tropical fruit, passion fruit undertones, then sustained heat. Used in ceviche, causa, aji de gallina. Nothing else tastes like it.",
+        url: "https://austinpeppers.com",
+      },
+      {
+        name: "Lemon Drop",
+        tagline: "Citrus acid + heat. A squeeze of lemon that bites back.",
+        heat: "15,000–30,000 SHU",
+        flavor: "Sharp citrus, lemon-lime acidity, clean heat. Excellent in fish dishes and cocktails.",
+        url: "https://austinpeppers.com",
+      },
+      {
+        name: "Aji Crystal",
+        tagline: "Mild, fresh, crisp. The every-day baccatum.",
+        heat: "5,000–15,000 SHU",
+        flavor: "Light, fresh, slightly fruity with mild heat. Good raw, good cooked. Chilean staple.",
+        url: "https://austinpeppers.com",
+      },
+      {
+        name: "Bishop's Crown",
+        tagline: "Three-lobed shape like a bishop's hat. Mild, sweet, weird.",
+        heat: "5,000–10,000 SHU",
+        flavor: "Sweet, mild, slightly fruity. The unusual shape makes it a conversation piece. Hollow pockets hold cheese and filling well.",
+        url: "https://austinpeppers.com",
+      },
+      {
+        name: "Aji Pineapple",
+        tagline: "Tropical, sweet, almost no heat. Eats like a snack pepper.",
+        heat: "0–1,000 SHU",
+        flavor: "Tropical, pineapple-adjacent sweetness, nearly zero heat. Prolific producer. Great fresh or dried.",
+        url: "https://austinpeppers.com",
+      },
+    ],
   },
 ];
 
