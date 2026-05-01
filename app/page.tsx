@@ -28,7 +28,7 @@ export default function HomePage() {
               className="text-acid text-xs tracking-[0.3em] mb-4"
               style={{ fontFamily: "var(--font-display, Oswald)", textTransform: "uppercase" }}
             >
-              Texas — Est. Whenever We Felt Like It
+              Online — Ships Nationwide
             </p>
             <h1
               className="text-text text-5xl sm:text-7xl leading-none mb-6"

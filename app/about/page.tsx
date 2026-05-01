@@ -14,7 +14,7 @@ export default function AboutPage() {
       {/* Header */}
       <div className="max-w-3xl mb-16">
         <div className="flex items-center gap-6 mb-8">
-          <GorillaSVG className="h-20 w-20 text-acid shrink-0" />
+          <GorillaSVG className="h-10 w-20 shrink-0" />
           <div>
             <p
               className="text-acid text-xs tracking-[0.3em] mb-2"
@@ -28,7 +28,7 @@ export default function AboutPage() {
             >
               Priest Trees Worldwide
             </h1>
-            <p className="text-muted text-sm mt-1">Texas-Based. Worldwide Perspective.</p>
+            <p className="text-muted text-sm mt-1">Online. Ships Anywhere Plants Can Go.</p>
           </div>
         </div>
         <p className="text-muted text-lg leading-relaxed">

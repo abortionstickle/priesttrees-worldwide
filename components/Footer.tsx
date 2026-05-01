@@ -14,7 +14,7 @@ export default function Footer() {
                 <div className="text-text text-sm tracking-widest" style={{ fontFamily: "var(--font-display, Oswald)", textTransform: "uppercase" }}>
                   Priest Trees Worldwide
                 </div>
-                <div className="text-muted text-xs">Texas-Based</div>
+                <div className="text-muted text-xs">Online · Ships US</div>
               </div>
             </div>
             <p className="text-muted text-sm leading-relaxed">
@@ -47,7 +47,7 @@ export default function Footer() {
             <h3 className="text-text text-xs tracking-widest mb-4 uppercase" style={{ fontFamily: "var(--font-display, Oswald)" }}>
               Location
             </h3>
-            <p className="text-muted text-sm">Texas, USA</p>
+            <p className="text-muted text-sm">Online · Ships Nationwide</p>
             <p className="text-muted text-sm mt-1">priesttreesworldwide.com</p>
             <p className="text-muted text-sm mt-4">
               Partner:{" "}
