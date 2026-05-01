@@ -43,7 +43,7 @@ export default function HomePage() {
               Trees.
             </h1>
             <p className="text-muted text-lg leading-relaxed mb-8 max-w-lg">
-              Non-native. Unusual. Climate-matched. The trees your nursery
+              Unusual. Forgotten. Climate-matched. The trees your nursery
               doesn&apos;t carry because they require actual knowledge to sell.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">

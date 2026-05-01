@@ -19,7 +19,7 @@ export default function Footer() {
             </div>
             <p className="text-muted text-sm leading-relaxed">
               Rare and unusual trees for homeowners who want something different.
-              Non-native. Forgotten classics. Climate-matched.
+              Unusual. Forgotten classics. Climate-matched.
             </p>
           </div>
 
@@ -60,7 +60,7 @@ export default function Footer() {
 
         <div className="mt-12 pt-6 border-t border-border flex items-center justify-between gap-4">
           <p className="text-subtle text-xs">
-            © {new Date().getFullYear()} Priest Trees Worldwide. We sell non-native plants without apology.
+            © {new Date().getFullYear()} Priest Trees Worldwide. We sell unusual and forgotten trees without apology.
           </p>
           <p className="text-subtle text-xs">priesttreesworldwide.com</p>
         </div>
