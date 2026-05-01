@@ -17,7 +17,7 @@ export interface Plant {
   koppen: string[];
   koppenLabel: string;
   category: 'specimen' | 'fruit' | 'oak' | 'pepper' | 'tropical' | 'conifer';
-  continent: 'texas' | 'americas' | 'europe' | 'asia' | 'africa' | 'australia';
+  continent: 'americas' | 'europe' | 'asia' | 'africa' | 'australia';
   featured: boolean;
   partnerUrl?: string;
   partnerName?: string;
@@ -56,7 +56,7 @@ export const plants: Plant[] = [
     description: "The Trans-Pecos of West Texas is the desert willow's native ground — and most of Texas completely ignores it. Orchid-like flowers all summer. Zero supplemental water once established. Handles the worst heat Texas can throw. A hummingbird magnet. The rest of the state is slowly discovering what the Chihuahuan Desert has known for centuries. Get ahead of it.",
     zoneMin: 7.5, zoneMax: 11,
     koppen: ["BSh", "BSk", "BWk"], koppenLabel: "Hot semi-arid to cold desert",
-    category: "specimen", continent: "texas", featured: true,
+    category: "specimen", continent: "americas", featured: true,
     nativeRegion: "Trans-Pecos Texas, New Mexico, Arizona", mature: "15–30 feet",
     imageUrl: wiki("Chilopsis_linearis.jpg"),
   },
@@ -68,7 +68,7 @@ export const plants: Plant[] = [
     description: "Also called the toothache tree because the bark and leaves contain a natural anesthetic — chew a leaf and your mouth goes numb within seconds. The trunk is covered in conical spines that look like something from the Cretaceous. Strange, useful, and genuinely alarming in appearance. It does all of this while being a food source for giant swallowtail butterflies. Worth every inch of space.",
     zoneMin: 7, zoneMax: 9,
     koppen: ["Cfa", "BSh"], koppenLabel: "Humid subtropical to semi-arid",
-    category: "specimen", continent: "texas", featured: true,
+    category: "specimen", continent: "americas", featured: true,
     nativeRegion: "Southeast US to East Texas", mature: "20–30 feet",
     imageUrl: wiki("Zanthoxylum_clava-herculis.jpg"),
   },
@@ -486,7 +486,7 @@ export const plants: Plant[] = [
     description: "Endemic to the Edwards Plateau limestone cliffs. Bluer-than-blue summer foliage, shrimp-pink in spring emergence. Handles the worst alkaline limestone soils the Hill Country can throw. Semi-deciduous. Compact enough for residential lots. The oak world has a thousand species and most nurseries stock two. This is one you'll never regret hunting down.",
     zoneMin: 7, zoneMax: 9,
     koppen: ["BSh", "BSk", "Cfa"], koppenLabel: "Semi-arid to subtropical",
-    category: "oak", continent: "texas", featured: false,
+    category: "oak", continent: "americas", featured: false,
     nativeRegion: "Edwards Plateau, central Texas & Mexico", mature: "25–40 feet",
     imageUrl: wiki("Quercus_laceyi.jpg"),
   },
@@ -718,7 +718,7 @@ export const plants: Plant[] = [
     description: "Native to the Mojave and Sonoran deserts — this is where stone fruits go when they want to survive. Tiny white flowers in early spring, small reddish fruits, gray-green foliage that shrugs off drought and heat that would kill most trees. A legitimate rootstock candidate for grafting low-chill stone fruit varieties onto desert-proof root systems. Interesting as a standalone specimen in the right dry climate. The desert has better trees than anyone gives it credit for.",
     zoneMin: 6, zoneMax: 10,
     koppen: ["BWk", "BSk", "BSh"], koppenLabel: "Desert to semi-arid",
-    category: "fruit", continent: "texas", featured: false,
+    category: "fruit", continent: "americas", featured: false,
     nativeRegion: "Mojave & Sonoran Desert, SW United States", mature: "3–12 feet",
     imageUrl: wiki("Prunus_fasciculata.jpg"),
   },
@@ -730,7 +730,7 @@ export const plants: Plant[] = [
     description: "A variety of the black cherry that evolved specifically for the Edwards Plateau — carved out by limestone cliffs, poor soils, and brutal summer heat. It makes actual cherries. The deer will try to eat it constantly; plan accordingly. Fall color ranges from gold to deep red. If you're in the Hill Country, this is the tree that belongs there, growing in conditions that would kill the standard form.",
     zoneMin: 4, zoneMax: 8,
     koppen: ["BSh", "BSk", "Cfa"], koppenLabel: "Semi-arid to subtropical",
-    category: "fruit", continent: "texas", featured: false,
+    category: "fruit", continent: "americas", featured: false,
     nativeRegion: "Edwards Plateau, central Texas", mature: "25–50 feet",
     imageUrl: wiki("Prunus_serotina.jpg"),
   },

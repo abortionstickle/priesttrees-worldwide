@@ -6,7 +6,6 @@ import PlantCard from "./PlantCard";
 
 const CONTINENTS: { value: Plant["continent"] | "all"; label: string }[] = [
   { value: "all", label: "All" },
-  { value: "texas", label: "Texas" },
   { value: "americas", label: "Americas" },
   { value: "europe", label: "Europe" },
   { value: "asia", label: "Asia" },
