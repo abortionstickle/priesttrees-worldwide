@@ -506,6 +506,19 @@ export const plants: Plant[] = [
     imageUrl: wiki("Quercus_suber.jpg"),
   },
 
+  {
+    slug: "yellow-magnolia",
+    name: "Yellow Magnolia",
+    scientificName: "Magnolia 'Elizabeth' / 'Butterflies' / 'Yellow Bird'",
+    tagline: "Magnolias aren't just pink. The yellow ones are rarer and better.",
+    description: "Most people have only seen the pink saucer magnolia. The yellow-flowered deciduous magnolias are the ones worth actually seeking out. 'Elizabeth' (the classic) opens pale lemon-yellow in early spring before the leaves — a ghost bloom on bare wood. 'Butterflies' is deeper yellow, more upright, earlier. 'Yellow Bird' opens last and holds color longest. All three are hybrids between the cucumber magnolia (Magnolia acuminata) and various Asian species. They bloom before any leaves emerge — naked branches covered in yellow chalices. Zone 4–9. Fully deciduous. Nothing else blooms like this in late winter.",
+    zoneMin: 4, zoneMax: 9,
+    koppen: ["Cfa", "Cfb", "Dfa", "BSk"], koppenLabel: "Temperate to continental",
+    category: "specimen", continent: "americas", featured: false,
+    nativeRegion: "Hybrid — North American × Asian parentage", mature: "20–35 feet",
+    imageUrl: wiki("Magnolia_Elizabeth.jpg"),
+  },
+
   // ── FRUIT ─────────────────────────────────────────────────────────────────
 
   {

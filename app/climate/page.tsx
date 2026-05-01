@@ -6,7 +6,7 @@ import { koppenZones } from "@/data/zones";
 export const metadata: Metadata = {
   title: "Climate Zones",
   description:
-    "USDA hardiness zones, Köppen climate classifications, and microclimate — explained in plain language for Texas plant buyers.",
+    "USDA hardiness zones, Köppen climate classifications, and microclimate — explained in plain language for plant buyers.",
 };
 
 export default function ClimatePage() {
@@ -65,7 +65,7 @@ export default function ClimatePage() {
             <p className="text-muted leading-relaxed mb-4">
               The USDA divides the country into zones numbered 1 through 13 based on one
               thing: the average annual minimum winter temperature. Zone 1 is interior Alaska.
-              Zone 13 is Death Valley. Most of Texas sits between Zone 6b and Zone 9b.
+              Zone 13 is Death Valley.
             </p>
             <p className="text-muted leading-relaxed mb-4">
               Each zone covers a 10°F range, split into &ldquo;a&rdquo; (colder half) and &ldquo;b&rdquo;
@@ -75,40 +75,29 @@ export default function ClimatePage() {
             </p>
             <p className="text-muted leading-relaxed mb-6">
               <strong className="text-text">What it tells you:</strong> Will this plant survive
-              winter here? Nothing more. A Zone 8b plant in Austin and a Zone 8b plant in
-              Atlanta face the same minimum temperature — but completely different summers,
-              rainfall, and humidity. That&apos;s where Köppen comes in.
+              winter here? Nothing more. Two yards in Zone 8b can face completely different
+              summers, rainfall, and humidity. That&apos;s where Köppen comes in.
             </p>
-            <div className="bg-surface border border-border p-4">
-              <p className="text-acid text-xs tracking-widest mb-2" style={{ fontFamily: "var(--font-display, Oswald)", textTransform: "uppercase" }}>
-                Austin TX example
-              </p>
-              <p className="text-text text-2xl mb-1" style={{ fontFamily: "var(--font-display, Oswald)" }}>Zone 8b</p>
-              <p className="text-muted text-sm">Average minimum: 15–20°F</p>
-            </div>
           </div>
           <div className="space-y-3">
             <p className="text-muted text-xs tracking-widest mb-4" style={{ fontFamily: "var(--font-display, Oswald)", textTransform: "uppercase" }}>
-              Texas Zone Range
+              Zone Reference
             </p>
             {[
-              { zone: "6b", temp: "−5 to 0°F", region: "Panhandle highlands" },
-              { zone: "7a", temp: "0 to 5°F", region: "North Texas plateaus" },
-              { zone: "7b", temp: "5 to 10°F", region: "Amarillo, Lubbock" },
-              { zone: "8a", temp: "10 to 15°F", region: "Dallas, El Paso" },
-              { zone: "8b", temp: "15 to 20°F", region: "Austin, San Antonio" },
-              { zone: "9a", temp: "20 to 25°F", region: "Houston, Victoria" },
-              { zone: "9b", temp: "25 to 30°F", region: "Laredo, lower Rio Grande" },
-              { zone: "10a", temp: "30 to 35°F", region: "Brownsville coast" },
+              { zone: "6", temp: "−10 to 0°F" },
+              { zone: "7", temp: "0 to 10°F" },
+              { zone: "8", temp: "10 to 20°F" },
+              { zone: "9", temp: "20 to 30°F" },
+              { zone: "10", temp: "30 to 40°F" },
+              { zone: "11", temp: "40 to 50°F" },
+              { zone: "12", temp: "50 to 60°F" },
+              { zone: "13", temp: "60°F+" },
             ].map((r) => (
               <div key={r.zone} className="flex items-center justify-between bg-surface border border-border px-4 py-3">
-                <div>
-                  <span className="text-acid text-lg mr-3" style={{ fontFamily: "var(--font-display, Oswald)" }}>
-                    {r.zone}
-                  </span>
-                  <span className="text-muted text-xs">{r.region}</span>
-                </div>
-                <span className="text-subtle text-xs">{r.temp}</span>
+                <span className="text-acid text-lg" style={{ fontFamily: "var(--font-display, Oswald)" }}>
+                  Zone {r.zone}
+                </span>
+                <span className="text-subtle text-xs">{r.temp} avg minimum</span>
               </div>
             ))}
           </div>
@@ -171,13 +160,7 @@ export default function ClimatePage() {
                   <p className="text-muted text-sm">{zone.description}</p>
                 </div>
               </div>
-              <div className="mb-3">
-                <p className="text-acid text-xs tracking-widest mb-1" style={{ fontFamily: "var(--font-display, Oswald)", textTransform: "uppercase" }}>
-                  Texas Regions
-                </p>
-                <p className="text-muted text-sm">{zone.texasRegions}</p>
-              </div>
-              <p className="text-text text-sm leading-relaxed border-t border-border pt-3">
+              <p className="text-text text-sm leading-relaxed">
                 {zone.plantingImplications}
               </p>
             </div>
