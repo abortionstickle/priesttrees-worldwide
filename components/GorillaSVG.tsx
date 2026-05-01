@@ -1,39 +1,36 @@
 export default function GorillaSVG({ className }: { className?: string }) {
   return (
     <svg
-      viewBox="0 0 64 72"
+      viewBox="0 0 72 60"
       className={className}
       fill="currentColor"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
     >
-      {/* Sagittal crest bump */}
-      <ellipse cx="32" cy="8" rx="7" ry="7" />
-      {/* Main skull */}
-      <ellipse cx="32" cy="26" rx="22" ry="20" />
-      {/* Wide jaw / lower face */}
-      <ellipse cx="32" cy="48" rx="18" ry="14" />
-      {/* Prominent brow ridge — supraorbital torus */}
-      <rect x="11" y="30" width="42" height="7" rx="3.5" style={{ fill: "#0d100a", opacity: 0.35 }} />
-      {/* Eye sockets */}
-      <ellipse cx="22" cy="35" rx="5" ry="4.5" style={{ fill: "#0d100a", opacity: 0.45 }} />
-      <ellipse cx="42" cy="35" rx="5" ry="4.5" style={{ fill: "#0d100a", opacity: 0.45 }} />
-      {/* Pupils — acid green glint */}
-      <circle cx="22" cy="35" r="2" style={{ fill: "#b8d42a", opacity: 0.6 }} />
-      <circle cx="42" cy="35" r="2" style={{ fill: "#b8d42a", opacity: 0.6 }} />
-      {/* Nose bridge */}
-      <ellipse cx="32" cy="46" rx="9" ry="6" style={{ fill: "#0d100a", opacity: 0.2 }} />
-      {/* Nostrils */}
-      <ellipse cx="27" cy="47" rx="3" ry="2.5" style={{ fill: "#0d100a", opacity: 0.5 }} />
-      <ellipse cx="37" cy="47" rx="3" ry="2.5" style={{ fill: "#0d100a", opacity: 0.5 }} />
-      {/* Mouth line */}
+      {/* Ears — clearly on the sides */}
+      <ellipse cx="5" cy="30" rx="7" ry="9" />
+      <ellipse cx="67" cy="30" rx="7" ry="9" />
+      {/* Single wide head — no stacked blobs */}
+      <ellipse cx="36" cy="30" rx="28" ry="26" />
+      {/* Heavy brow ridge */}
+      <rect x="14" y="24" width="44" height="10" rx="4" style={{ fill: "#0d100a", opacity: 0.5 }} />
+      {/* Left eye socket + pupil */}
+      <ellipse cx="24" cy="29" rx="7" ry="6" style={{ fill: "#0d100a", opacity: 0.65 }} />
+      <circle cx="24" cy="29" r="3.5" style={{ fill: "#0d100a" }} />
+      {/* Right eye socket + pupil */}
+      <ellipse cx="48" cy="29" rx="7" ry="6" style={{ fill: "#0d100a", opacity: 0.65 }} />
+      <circle cx="48" cy="29" r="3.5" style={{ fill: "#0d100a" }} />
+      {/* Wide flat nose — two nostrils */}
+      <ellipse cx="28" cy="40" rx="5" ry="4" style={{ fill: "#0d100a", opacity: 0.55 }} />
+      <ellipse cx="44" cy="40" rx="5" ry="4" style={{ fill: "#0d100a", opacity: 0.55 }} />
+      {/* Mouth */}
       <path
-        d="M 21 57 C 26 60 38 60 43 57"
+        d="M 22 50 Q 36 56 50 50"
         stroke="#0d100a"
-        strokeWidth="2"
+        strokeWidth="2.5"
         fill="none"
         strokeLinecap="round"
-        style={{ opacity: 0.35 }}
+        style={{ opacity: 0.38 }}
       />
     </svg>
   );
