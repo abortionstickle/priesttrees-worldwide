@@ -598,6 +598,19 @@ export const plants: Plant[] = [
     imageUrl: wiki("Prunus_serotina.jpg"),
   },
 
+  {
+    slug: "cornelian-cherry",
+    name: "Cornelian Cherry",
+    scientificName: "Cornus mas",
+    tagline: "Ukraine's national fruit tree. Older than Rome. Sour, tart, and completely overlooked.",
+    description: "Cornelian cherry is not a cherry — it's a dogwood that makes fruit. It has been cultivated in Eastern Europe and the Caucasus for thousands of years. The tart red olive-shaped drupes are used for juice, preserves, and wine across Ukraine, Georgia, and Turkey. It blooms in late winter before any other tree even thinks about leafing out — small yellow clusters on bare branches, a January surprise. The wood is so dense it sinks in water; used for tool handles and ancient weaponry. Zone 4–8 means it works in the Hill Country and northern Texas. If you want a fruit tree nobody has ever heard of, this is it.",
+    zoneMin: 4, zoneMax: 8,
+    koppen: ["Dfb", "Cfb", "Cfa", "BSk"], koppenLabel: "Continental to humid temperate",
+    category: "fruit", continent: "europe", featured: false,
+    nativeRegion: "Southern Europe, Western Asia, Ukraine", mature: "15–25 feet",
+    imageUrl: wiki("Cornelian_cherry_1.JPG"),
+  },
+
   // ── PEPPER ────────────────────────────────────────────────────────────────
 
   {
