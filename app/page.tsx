@@ -168,10 +168,10 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-2 gap-3">
             {[
-              { code: "Cfa", label: "Humid Subtropical", region: "East Texas, Houston, DFW" },
-              { code: "BSh", label: "Hot Semi-Arid", region: "Austin, San Antonio, Hill Country" },
-              { code: "BSk", label: "Cold Steppe", region: "Panhandle, High Plains" },
-              { code: "BWk", label: "Cold Desert", region: "El Paso, Trans-Pecos" },
+              { code: "Cfa", label: "Humid Subtropical", region: "Hot humid summers, mild winters" },
+              { code: "BSh", label: "Hot Semi-Arid", region: "Hot dry summers, low rainfall" },
+              { code: "BSk", label: "Cold Steppe", region: "Hot summers, cold winters" },
+              { code: "BWk", label: "Cold Desert", region: "Extreme heat, hard freezes" },
             ].map((z) => (
               <Link
                 key={z.code}
