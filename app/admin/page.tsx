@@ -25,7 +25,6 @@ export default function AdminPage() {
               <th className="text-left px-4 py-3 text-muted text-xs tracking-widest" style={{ fontFamily: 'var(--font-display, Oswald)', textTransform: 'uppercase' }}>Slug</th>
               <th className="text-left px-4 py-3 text-muted text-xs tracking-widest" style={{ fontFamily: 'var(--font-display, Oswald)', textTransform: 'uppercase' }}>Category</th>
               <th className="text-left px-4 py-3 text-muted text-xs tracking-widest" style={{ fontFamily: 'var(--font-display, Oswald)', textTransform: 'uppercase' }}>Zones</th>
-              <th className="text-left px-4 py-3 text-muted text-xs tracking-widest" style={{ fontFamily: 'var(--font-display, Oswald)', textTransform: 'uppercase' }}>Price</th>
             </tr>
           </thead>
           <tbody>
@@ -39,7 +38,6 @@ export default function AdminPage() {
                 <td className="px-4 py-3 text-muted font-mono text-xs">{p.slug}</td>
                 <td className="px-4 py-3 text-muted">{p.category}</td>
                 <td className="px-4 py-3 text-muted">{p.zoneMin}–{p.zoneMax}</td>
-                <td className="px-4 py-3 text-acid">{p.price ? `$${p.price}` : '—'}</td>
               </tr>
             ))}
           </tbody>
