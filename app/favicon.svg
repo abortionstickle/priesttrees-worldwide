@@ -1,21 +1,7 @@
 <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <clipPath id="face">
-      <ellipse cx="16" cy="20" rx="13" ry="12"/>
-    </clipPath>
-  </defs>
-  <rect width="32" height="32" fill="#0d100a"/>
-  <!-- Ears -->
-  <circle cx="2" cy="20" r="3.5" fill="#b8d42a"/>
-  <circle cx="30" cy="20" r="3.5" fill="#b8d42a"/>
-  <!-- Sagittal crest -->
-  <ellipse cx="16" cy="6" rx="5" ry="6" fill="#b8d42a"/>
-  <!-- Face -->
-  <ellipse cx="16" cy="20" rx="13" ry="12" fill="#b8d42a"/>
-  <!-- Brow — single dark band, no separate eye shapes -->
-  <rect x="0" y="10" width="32" height="10" fill="#0d100a" clip-path="url(#face)" opacity="0.82"/>
-  <!-- Nose — single wide oval, not two holes -->
-  <ellipse cx="16" cy="24.5" rx="5.5" ry="3.5" fill="#0d100a" opacity="0.5"/>
-  <!-- Muzzle -->
-  <ellipse cx="16" cy="29" rx="5" ry="2.5" fill="#b8d42a" opacity="0.45"/>
+  <rect width="32" height="32" fill="#b8d42a"/>
+  <circle cx="3" cy="20" r="3" fill="#0d100a"/>
+  <circle cx="29" cy="20" r="3" fill="#0d100a"/>
+  <ellipse cx="16" cy="7" rx="5" ry="5" fill="#0d100a"/>
+  <ellipse cx="16" cy="20" rx="12" ry="11" fill="#0d100a"/>
 </svg>
