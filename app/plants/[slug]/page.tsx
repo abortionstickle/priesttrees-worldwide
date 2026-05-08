@@ -112,7 +112,6 @@ export default async function PlantDetailPage({ params }: Props) {
           {/* Partner link */}
           {plant.partnerUrl && (
             <div className="border border-earth/50 bg-surface p-4 mb-6">
-              <p className="text-muted text-xs mb-2">Available through our partner:</p>
               <a
                 href={plant.partnerUrl}
                 target="_blank"
@@ -120,7 +119,7 @@ export default async function PlantDetailPage({ params }: Props) {
                 className="text-acid hover:underline text-sm tracking-widest"
                 style={{ fontFamily: "var(--font-display, Oswald)", textTransform: "uppercase" }}
               >
-                {plant.partnerName} →
+                Shop at {plant.partnerName} →
               </a>
             </div>
           )}
@@ -145,12 +144,15 @@ export default async function PlantDetailPage({ params }: Props) {
             Varieties
           </h2>
           <p className="text-muted mb-8">
-            Available through{" "}
             {plant.partnerUrl ? (
-              <a href={plant.partnerUrl} target="_blank" rel="noopener noreferrer" className="text-acid hover:underline">
-                {plant.partnerName}
-              </a>
-            ) : "our partners"}.
+              <>
+                Shop at{" "}
+                <a href={plant.partnerUrl} target="_blank" rel="noopener noreferrer" className="text-acid hover:underline">
+                  {plant.partnerName}
+                </a>
+                .
+              </>
+            ) : "Select a variety below."}
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             {plant.varieties.map((v) => (
