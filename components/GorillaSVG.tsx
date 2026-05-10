@@ -7,13 +7,18 @@ export default function GorillaSVG({ className }: { className?: string }) {
       aria-hidden="true"
     >
       <rect width="32" height="32" fill="#0d100a"/>
-      {/* Ear */}
-      <ellipse cx="23" cy="17" rx="2.5" ry="3" fill="#b8d42a"/>
-      {/* Gorilla profile facing left — sagittal crest, heavy brow, projecting muzzle */}
-      <path
-        d="M 24 30 C 27 22 27 10 20 6 Q 16 2 12 4 C 9 5 7 9 7 12 Q 6 14 7 17 Q 8 19 7 21 C 6 23 5 25 7 28 Q 11 31 18 31 Z"
-        fill="#b8d42a"
-      />
+      <circle cx="3" cy="18" r="2.5" fill="#b8d42a"/>
+      <circle cx="29" cy="18" r="2.5" fill="#b8d42a"/>
+      {/* Face with sagittal crest */}
+      <path d="M 4 19 Q 3 12 10 6 Q 16 2 22 6 Q 29 12 28 19 Q 28 27 16 29 Q 4 27 4 19 Z" fill="#b8d42a"/>
+      {/* Brow — horizontal ellipse, not a rectangle */}
+      <ellipse cx="16" cy="14" rx="11" ry="4" fill="#0d100a" opacity="0.88"/>
+      {/* Nose — wide, flat, dominant */}
+      <ellipse cx="16" cy="22" rx="6" ry="3" fill="#0d100a" opacity="0.45"/>
+      <ellipse cx="12" cy="22.5" rx="2.2" ry="1.3" fill="#0d100a" opacity="0.88"/>
+      <ellipse cx="20" cy="22.5" rx="2.2" ry="1.3" fill="#0d100a" opacity="0.88"/>
+      {/* Muzzle */}
+      <ellipse cx="16" cy="27" rx="5" ry="2" fill="#0d100a" opacity="0.22"/>
     </svg>
   );
 }
