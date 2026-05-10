@@ -14,7 +14,7 @@ export default function AboutPage() {
       {/* Header */}
       <div className="max-w-3xl mb-16">
         <div className="flex items-center gap-6 mb-8">
-          <GorillaSVG className="h-10 w-20 shrink-0" />
+          <GorillaSVG className="h-12 w-12 shrink-0" />
           <div>
             <p
               className="text-acid text-xs tracking-[0.3em] mb-2"

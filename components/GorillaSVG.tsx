@@ -1,23 +1,16 @@
 export default function GorillaSVG({ className }: { className?: string }) {
   return (
     <svg
-      viewBox="0 0 32 16"
+      viewBox="0 0 32 32"
       className={className}
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
     >
-      <rect width="32" height="16" fill="#0d100a" rx="2" />
-      <radialGradient id="eyegl" cx="50%" cy="50%" r="50%">
-        <stop offset="0%" stopColor="#ff3a20" stopOpacity="1" />
-        <stop offset="60%" stopColor="#c03020" stopOpacity="1" />
-        <stop offset="100%" stopColor="#7a1a10" stopOpacity="0" />
-      </radialGradient>
-      <circle cx="10" cy="8" r="5" fill="url(#eyegl)" />
-      <circle cx="22" cy="8" r="5" fill="url(#eyegl)" />
-      <circle cx="10" cy="8" r="2.5" fill="#ff4433" />
-      <circle cx="22" cy="8" r="2.5" fill="#ff4433" />
-      <circle cx="9.5" cy="7.5" r="1" fill="#ff7a66" opacity="0.8" />
-      <circle cx="21.5" cy="7.5" r="1" fill="#ff7a66" opacity="0.8" />
+      <rect width="32" height="32" fill="#b8d42a"/>
+      <ellipse cx="2.5" cy="20" rx="2.5" ry="3.5" fill="#0d100a"/>
+      <ellipse cx="29.5" cy="20" rx="2.5" ry="3.5" fill="#0d100a"/>
+      <path d="M 10 8 Q 16 1 22 8 C 28 10 29 16 29 21 C 29 28 23 31 16 31 C 9 31 3 28 3 21 C 3 16 4 10 10 8 Z" fill="#0d100a"/>
+      <ellipse cx="16" cy="27" rx="6.5" ry="4" fill="#1e2614"/>
     </svg>
   );
 }

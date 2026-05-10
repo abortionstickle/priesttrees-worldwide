@@ -9,7 +9,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <GorillaSVG className="h-5 w-10" />
+              <GorillaSVG className="h-7 w-7" />
               <div>
                 <div className="text-text text-sm tracking-widest" style={{ fontFamily: "var(--font-display, Oswald)", textTransform: "uppercase" }}>
                   Priest Trees Worldwide
